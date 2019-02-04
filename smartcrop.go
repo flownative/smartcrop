@@ -40,7 +40,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/muesli/smartcrop/options"
+	"github.com/flownative/smartcrop/options"
 
 	"golang.org/x/image/draw"
 )
