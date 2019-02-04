@@ -30,7 +30,7 @@ package nfnt
 import (
 	"image"
 
-	"github.com/muesli/smartcrop/options"
+	"github.com/flownative/smartcrop/options"
 	"github.com/nfnt/resize"
 )
 
