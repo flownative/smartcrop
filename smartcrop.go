@@ -448,12 +448,13 @@ func faceDetect(i *image.RGBA, o *image.RGBA) {
 		MaxSize:     1000,
 		ShiftFactor: 0.1,
 		ScaleFactor: 1.1,
-	}
-	imgParams := pigo.ImageParams{
-		Pixels: pixels,
-		Rows:   rows,
-		Cols:   cols,
-		Dim:    cols,
+
+		ImageParams: pigo.ImageParams{
+			Pixels: pixels,
+			Rows:   rows,
+			Cols:   cols,
+			Dim:    cols,
+		},
 	}
 
 	cascadeFile, err := dataFace()
@@ -468,7 +469,7 @@ func faceDetect(i *image.RGBA, o *image.RGBA) {
 		log.Fatalf("Error reading the cascade file: %s", err)
 	}
 
-	dets := classifier.RunCascade(imgParams, cParams)
+	dets := classifier.RunCascade(cParams, 0.0)
 
 	faces := classifier.ClusterDetections(dets, 0.2)
 
